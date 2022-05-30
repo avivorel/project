@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/project.dir/Company.cpp.o"
+  "CMakeFiles/project.dir/Employee.cpp.o"
   "CMakeFiles/project.dir/EmployeeManager.cpp.o"
   "CMakeFiles/project.dir/main.cpp.o"
   "project"

@@ -150,6 +150,33 @@ Company.cpp.s:
 	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Company.cpp.s
 .PHONY : Company.cpp.s
 
+Employee.o: Employee.cpp.o
+
+.PHONY : Employee.o
+
+# target to build an object file
+Employee.cpp.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Employee.cpp.o
+.PHONY : Employee.cpp.o
+
+Employee.i: Employee.cpp.i
+
+.PHONY : Employee.i
+
+# target to preprocess a source file
+Employee.cpp.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Employee.cpp.i
+.PHONY : Employee.cpp.i
+
+Employee.s: Employee.cpp.s
+
+.PHONY : Employee.s
+
+# target to generate assembly for a file
+Employee.cpp.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Employee.cpp.s
+.PHONY : Employee.cpp.s
+
 EmployeeManager.o: EmployeeManager.cpp.o
 
 .PHONY : EmployeeManager.o
@@ -216,6 +243,9 @@ help:
 	@echo "... Company.o"
 	@echo "... Company.i"
 	@echo "... Company.s"
+	@echo "... Employee.o"
+	@echo "... Employee.i"
+	@echo "... Employee.s"
 	@echo "... EmployeeManager.o"
 	@echo "... EmployeeManager.i"
 	@echo "... EmployeeManager.s"

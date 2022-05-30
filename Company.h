@@ -5,11 +5,15 @@
 #ifndef PROJECT_COMPANY_H
 #define PROJECT_COMPANY_H
 
-#include "AVLRankTree.h"
+#include "RankAVL.h"
 
 
 class Company {
+private:
+    RankAVL<int,Employee*> employees_by_salary;
+    RankAVL<int,Employee*> employees_by_id;
 
+public:
 };
 
 
