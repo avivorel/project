@@ -6,14 +6,18 @@
 #define PROJECT_COMPANY_H
 
 #include "RankAVL.h"
-
+#include "Employee.h"
+#include "DList.h"
+#include "HashTable.h"
 
 class Company {
 private:
     RankAVL<int,Employee*> employees_by_salary;
     RankAVL<int,Employee*> employees_by_id;
 
+
 public:
+
 };
 
 

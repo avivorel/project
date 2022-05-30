@@ -109,6 +109,9 @@
 		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/RankAVL.h">
 			<Option target="project"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/exceptions.h">
+			<Option target="project"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/main.cpp">
 			<Option target="project"/>
 		</Unit>

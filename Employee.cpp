@@ -9,7 +9,7 @@ int Employee::getId() const {
 }
 
 int Employee::getCompanyId() const {
-    return this->companyid;
+    return this->company_id;
 }
 
 int Employee::getGrade() const {

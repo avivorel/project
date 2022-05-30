@@ -9,7 +9,7 @@
 class Employee {
     int id;
     int grade;
-    int companyid;
+    int company_id;
 public:
     int getId() const;
     int getCompanyId() const;
