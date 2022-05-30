@@ -123,6 +123,60 @@ project/fast:
 	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/build
 .PHONY : project/fast
 
+Company.o: Company.cpp.o
+
+.PHONY : Company.o
+
+# target to build an object file
+Company.cpp.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Company.cpp.o
+.PHONY : Company.cpp.o
+
+Company.i: Company.cpp.i
+
+.PHONY : Company.i
+
+# target to preprocess a source file
+Company.cpp.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Company.cpp.i
+.PHONY : Company.cpp.i
+
+Company.s: Company.cpp.s
+
+.PHONY : Company.s
+
+# target to generate assembly for a file
+Company.cpp.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/Company.cpp.s
+.PHONY : Company.cpp.s
+
+EmployeeManager.o: EmployeeManager.cpp.o
+
+.PHONY : EmployeeManager.o
+
+# target to build an object file
+EmployeeManager.cpp.o:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/EmployeeManager.cpp.o
+.PHONY : EmployeeManager.cpp.o
+
+EmployeeManager.i: EmployeeManager.cpp.i
+
+.PHONY : EmployeeManager.i
+
+# target to preprocess a source file
+EmployeeManager.cpp.i:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/EmployeeManager.cpp.i
+.PHONY : EmployeeManager.cpp.i
+
+EmployeeManager.s: EmployeeManager.cpp.s
+
+.PHONY : EmployeeManager.s
+
+# target to generate assembly for a file
+EmployeeManager.cpp.s:
+	$(MAKE) -f CMakeFiles/project.dir/build.make CMakeFiles/project.dir/EmployeeManager.cpp.s
+.PHONY : EmployeeManager.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +213,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... project"
+	@echo "... Company.o"
+	@echo "... Company.i"
+	@echo "... Company.s"
+	@echo "... EmployeeManager.o"
+	@echo "... EmployeeManager.i"
+	@echo "... EmployeeManager.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

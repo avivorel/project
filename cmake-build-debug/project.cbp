@@ -82,6 +82,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Company.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Company.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/DList.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/EmployeeManager.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/EmployeeManager.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/HashTable.h">
+			<Option target="project"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/main.cpp">
 			<Option target="project"/>
 		</Unit>
