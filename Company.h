@@ -15,7 +15,6 @@ private:
     RankAVL<int,Employee*> employees_by_salary;
     RankAVL<int,Employee*> employees_by_id;
 
-
 public:
 
 };
