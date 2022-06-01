@@ -15,3 +15,7 @@ int Employee::getCompanyId() const {
 int Employee::getGrade() const {
     return this->grade;
 }
+
+int Employee::getSalary() const{
+    return this->salary;
+}

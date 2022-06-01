@@ -16,6 +16,11 @@ private:
     RankAVL<int,Employee*> employees_by_id;
 
 public:
+    int getId()const;
+
+    int getValue()const;
+
+    int getNumOfEmployees()const;
 
 };
 

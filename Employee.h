@@ -10,10 +10,12 @@ class Employee {
     int id;
     int grade;
     int company_id;
+    int salary;
 public:
     int getId() const;
     int getCompanyId() const;
     int getGrade() const;
+    int getSalary() const;
 };
 
 
