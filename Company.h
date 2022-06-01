@@ -9,18 +9,21 @@
 #include "Employee.h"
 #include "DList.h"
 #include "HashTable.h"
+#include "Essentials.h"
 
 class Company {
 private:
-    RankAVL<int,Employee*> employees_by_salary;
-    RankAVL<int,Employee*> employees_by_id;
-
+    RankAVL<employeeCondition_Id,Employee*> employees_by_salary;
+    RankAVL<employeeCondition_Salary_Id,Employee*> employees_by_id;
+    HashTable<int, Employee*> employees_hash;
 public:
     int getId()const;
 
     int getValue()const;
 
     int getNumOfEmployees()const;
+
+    void update();
 
 };
 

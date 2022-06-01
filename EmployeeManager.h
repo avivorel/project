@@ -14,8 +14,8 @@
 
 class EmployeeManager {
 private:
-    RankAVL<, class S> all_employees;
-    RankAVL<class T, class S> all_employees_by_salary;
+    RankAVL<employeeCondition_Id,Employee*> all_employees;
+    RankAVL<employeeCondition_Salary_Id,Employee*> all_employees_by_salary;
     HashTable<int,Employee*> all_employees_hash;
 public:
     void update();
