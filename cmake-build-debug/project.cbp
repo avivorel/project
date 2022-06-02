@@ -8,117 +8,124 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project">
-				<Option output="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug/project" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug/project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 project"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="project/fast">
-				<Option output="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug/project" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug/project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/11/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/c/Users/Aviv/Desktop/CE/semester\ 4/data\ structures/hw2/wet2/project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 project/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/darkm/Desktop/CE/semester\ 4/data\ structures/hw2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Company.cpp">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/AVLTree.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Company.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/Array.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/DList.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/Company.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Employee.cpp">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/Company.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Employee.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/DList.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/EmployeeManager.cpp">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/Employee.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/EmployeeManager.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/Employee.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/Essentials.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/EmployeeManager.cpp">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/HashTable.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/EmployeeManager.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/RankAVL.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/Essentials.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/exceptions.h">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/HashTable.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/main.cpp">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/RankAVL.h">
 			<Option target="project"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/Aviv/Desktop/CE/semester 4/data structures/hw2/wet2/project/CMakeLists.txt">
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/UnionFind.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/exceptions.h">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/main.cpp">
+			<Option target="project"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/darkm/Desktop/CE/semester 4/data structures/hw2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
