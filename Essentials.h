@@ -4,16 +4,15 @@
 
 #ifndef PROJECT_ESSENTIALS_H
 #define PROJECT_ESSENTIALS_H
+#include "Company.h"
+#include "Employee.h"
 
-class Company;
-class Employee;
-
-class companyCondition_Id {
+class companyCondition_Id{
 public:
-    Company& operator()(Company &first, Company &second) const {
-        if (first.getId() > second.getId())
+    Company operator()(Company& first, Company& second) const{
+        if(first.getId()>second.getId())
             return first;
-        else {
+        else{
             return second;
         }
     }
