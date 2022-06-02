@@ -9,7 +9,6 @@
 #include "DList.h"
 #include "RankAVL.h"
 #include "Employee.h"
-#include "Company.h"
 #include "Essentials.h"
 
 class EmployeeManager {

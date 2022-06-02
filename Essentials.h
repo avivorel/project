@@ -10,7 +10,7 @@ class Employee;
 
 class companyCondition_Id {
 public:
-    Company operator()(Company &first, Company &second) const {
+    Company& operator()(Company &first, Company &second) const {
         if (first.getId() > second.getId())
             return first;
         else {
