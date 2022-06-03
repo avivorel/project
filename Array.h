@@ -1,67 +1,63 @@
-//
-// Created by darkm on 02/06/2022.
-//
-
 #ifndef PROJECT_ARRAY_H
 #define PROJECT_ARRAY_H
 
 #include "exceptions.h"
 template <typename T>
 class Array {
-    T* array_m;
-    int size_m;
+    T* uf_array;
+    int array_size;
 public:
 
     Array(const int& size = 1, const T& defVal = T()){
-        size_m = size;
-        array_m = new T[size_m];
+        array_size = size;
+        uf_array = new T[array_size];
         for(int i = 0; i < size; i++){
-            array_m[i] = defVal;
+            uf_array[i] = defVal;
         }
     }
 
 
-    Array(const Array& aArray){
-        size_m = aArray.size_m;
-        array_m = new  T[size_m];
-        for(int i =0; i < size_m; i++){
-            array_m[i] = aArray[i];
+    Array(const Array& array_to_copy){
+        array_size = array_to_copy.array_size;
+        uf_array = new  T[array_size];
+        for(int i =0; i < array_size; i++){
+            uf_array[i] = array_to_copy[i];
         }
     }
     ~Array(){
-        delete [] array_m;
+        delete [] uf_array;
     }
 
-    Array& operator=(const Array& aArray){
-        if(this == &aArray){
+    Array& operator=(const Array& array_to_copy){
+        if(this == &array_to_copy){
             return *this;
         }
-        T* temp = array_m;
-        array_m = new T[aArray.size_m];
-        delete [] temp;
-        size_m = aArray.size_m;
-        for(int i =0; i < aArray.size_m; i++){
-            array_m[i] = aArray.array_m[i];
+        T* temporary_instance = uf_array;
+        uf_array = new T[array_to_copy.array_size];
+        delete [] temporary_instance;
+        array_size = array_to_copy.array_size;
+        for(int i =0; i < array_to_copy.array_size; i++){
+            uf_array[i] = array_to_copy.uf_array[i];
         }
         return *this;
     }
 
-    T& operator[](const int& index){
-        if(index >= size_m){
+    T& operator[](const int& index_to_fetch){
+        if(index_to_fetch >= array_size){
             throw IllegalIndex();
         }
-        return array_m[index];
+        return uf_array[index_to_fetch];
     }
 
-    const T& operator[] (const int& index) const{
-        if(index >= size_m){
+    const T& operator[] (const int& index_to_fetch) const{
+        if(index_to_fetch >= array_size){
             throw IllegalIndex();
         }
-        return array_m[index];
+        return uf_array[index_to_fetch];
     }
 
     const int& getSize() const{
-        return size_m;
+        return array_size;
     }
 
 };

@@ -24,7 +24,7 @@ class Node {
     friend DList<T>;
     Node *next;
     Node *prev;
-    void deleteNodeAux()
+    void deleteNode()
     {
         this->prev->next = this->next;
         if (this->next != nullptr) {
@@ -51,65 +51,65 @@ public:
 
     ~DList() {
         while (head->next != nullptr) {
-            head->next->deleteNodeAux();
+            head->next->deleteNode();
         }
         delete head;
     }
 
 
-    DList& operator= (const DList& src)
+    DList& operator= (const DList& list_to_copy)
     {
-        if(this == &src){
+        if(this == &list_to_copy){
             return *this;
         }
-        Node<T>* new_head  = new Node<T>;
-        new_head->next = nullptr;
-        new_head->prev = nullptr;
-        const Node<T>* current = src.head->next;
-        Node<T>* prev = new_head;
-        while(current != nullptr) {
+        Node<T>* new_lists_head  = new Node<T>;
+        new_lists_head->next = nullptr;
+        new_lists_head->prev = nullptr;
+        const Node<T>* curr = list_to_copy.head->next;
+        Node<T>* prev = new_lists_head;
+        while(curr != nullptr) {
             Node<T> *next = new (std::nothrow) Node<T>;
             if(next == nullptr){
-                while(new_head->next != nullptr) {
-                    deleteNode(new_head->next);
+                while(new_lists_head->next != nullptr) {
+                    deleteNode(new_lists_head->next);
                 }
-                delete new_head;
+                delete new_lists_head;
                 throw std::bad_alloc();
             }
-            next->data = current->data;
+            next->data = curr->data;
             next->next = nullptr;
             next->prev = prev;
             prev->next = next;
-            current = current->next;
+            curr = curr->next;
             prev = next;
         }
         while(this->head->next != nullptr) {
             deleteNode(this->head->next);
         }
         delete this->head;
-        this->head = new_head;
+        this->head = new_lists_head;
         return *this;
     }
 
-    Node<T>* insertFirst(const T& data)
+    Node<T>* insertFirst(const T& to_insert_first)
     {
-        Node<T>* node = new (Node<T>);
-        node->data = data;
-        node->next = head->next;
-        node->prev = head;
+        Node<T>* new_node = new (Node<T>);
+        new_node->data = to_insert_first;
+        new_node->next = head->next;
+        new_node->prev = head;
         if(head->next != nullptr){
-            head->next->prev = node;
+            head->next->prev = new_node;
         }
-        head->next = node;
-        return node;
+        head->next = new_node;
+        return new_node;
     }
 
-    void deleteNode(Node<T>* node)
+    void deleteNode(Node<T>* node_to_delete)
     {
-        if (node == nullptr){
+        if (node_to_delete == nullptr){
             return;
         }
-        node->deleteNodeAux();
+        node_to_delete->deleteNode();
     }
 
     /*
@@ -140,13 +140,13 @@ public:
             return tmp;
         }
 
-        bool operator == (const iterator& it) const
+        bool operator == (const iterator& iter) const
         {
-            return (it.current == current);
+            return (iter.current == current);
         }
-        bool operator != (const iterator& it) const
+        bool operator != (const iterator& iter) const
         {
-            return !(it == *this);
+            return !(iter == *this);
         }
 
     };
@@ -185,13 +185,13 @@ public:
             return tmp;
         }
 
-        bool operator == (const ConstIterator& it) const
+        bool operator == (const ConstIterator& iter) const
         {
-            return (it.current == current);
+            return (iter.current == current);
         }
-        bool operator != (const ConstIterator& it) const
+        bool operator != (const ConstIterator& iter) const
         {
-            return !(it == *this);
+            return !(iter == *this);
         }
 
     };

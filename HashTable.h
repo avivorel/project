@@ -31,7 +31,7 @@
 #endif // GOLDEN_RATIO
 
 
-inline int hashCalculate(int x, int len)
+inline int calculateHashFunc(int x, int len)
 {
     return floor(len*(fmod(x, GOLDEN_RATIO)));
 }
@@ -42,13 +42,13 @@ class HashTable {
     int len;
     int elem_num;
     void resize();
-    /** FACTOR:
+    /** Hash_Factor:
      * the size the arrays grow when alpha is no longer <= 2
      */
-    static const int FACTOR = 2;
-    static const int LOAD_FACTOR = 2;
-    inline bool isTooManyElem() const;
-    inline bool isTooLittleElem() const;
+    static const int Hash_Factor = 2;
+    static const int Hash_Load_Factor = 2;
+    inline bool checkIfTooMuchElements() const;
+    inline bool checkIfNotEnoughElements() const;
     int (*hashFunc)(const KEY&);
 public:
 
@@ -59,7 +59,7 @@ public:
     HashTable& operator= (const HashTable& src) = delete;
     const VALUE& operator[] (const KEY& key) const;
     VALUE& operator[](const KEY& key);
-    void insert(const KEY& key, const VALUE& value);// increasing size by ((size+1)*FACTOR)-1
+    void insert(const KEY& key, const VALUE& value);// increasing size by ((size+1)*Hash_Factor)-1
 
     void remove(const KEY& key);
     //exception classes:
@@ -87,15 +87,15 @@ const double HashTable<KEY,VALUE>::GOLDEN_RATIO  = 0.618033988;
 */
 
 template <typename KEY, typename VALUE>
-inline bool HashTable<KEY,VALUE>::isTooManyElem() const
+inline bool HashTable<KEY,VALUE>::checkIfTooMuchElements() const
 {
-    return (double)elem_num/len >= (double)LOAD_FACTOR;
+    return (double)elem_num/len >= (double)Hash_Load_Factor;
 }
 
 template <typename KEY, typename VALUE>
-inline bool HashTable<KEY,VALUE>::isTooLittleElem() const
+inline bool HashTable<KEY,VALUE>::checkIfNotEnoughElements() const
 {
-    return (double)elem_num/len <= 1/((double)FACTOR*FACTOR);
+    return (double)elem_num/len <= 1/((double)Hash_Factor * Hash_Factor);
 }
 
 
@@ -103,8 +103,8 @@ inline bool HashTable<KEY,VALUE>::isTooLittleElem() const
 
 template <typename KEY, typename VALUE>
 HashTable<KEY,VALUE>::HashTable(int (*hashFunc)(const KEY&)) :
-        data(new DList<VALUE>[FACTOR*FACTOR-1]), key_data(new DList<KEY>[FACTOR*FACTOR-1]),
-        len(FACTOR*FACTOR-1),elem_num(0), hashFunc(hashFunc) {}
+        data(new DList<VALUE>[Hash_Factor * Hash_Factor - 1]), key_data(new DList<KEY>[Hash_Factor * Hash_Factor - 1]),
+        len(Hash_Factor * Hash_Factor - 1), elem_num(0), hashFunc(hashFunc) {}
 
 template<typename KEY, typename VALUE>
 HashTable<KEY,VALUE>::~HashTable()
@@ -116,7 +116,7 @@ HashTable<KEY,VALUE>::~HashTable()
 template <typename KEY, typename VALUE>
 const VALUE& HashTable<KEY,VALUE>::operator[] (const KEY& key) const
 {
-    int hash = hashCalculate(hashFunc(key), len);
+    int hash = calculateHashFunc(hashFunc(key), len);
     assert(hash<len && hash>=0);
     auto iter_value = data[hash].constBegin();
     auto iter_key = key_data[hash].constBegin();
@@ -138,7 +138,7 @@ template <typename KEY, typename VALUE>
 void HashTable<KEY,VALUE>::insert(const KEY& key, const VALUE& value)
 {
     //search if key exists
-    int hash = hashCalculate(hashFunc(key), len);
+    int hash = calculateHashFunc(hashFunc(key), len);
     assert(hash<len && hash>=0);
     for(auto iter_key = key_data[hash].constBegin(); iter_key != key_data[hash].constEnd(); ++iter_key){
         if(iter_key.getData() == key){
@@ -149,7 +149,7 @@ void HashTable<KEY,VALUE>::insert(const KEY& key, const VALUE& value)
     data[hash].insertFirst(value);
     key_data[hash].insertFirst(key);
     elem_num++;
-    if(isTooManyElem()){
+    if(checkIfTooMuchElements()){
         resize();
     }
 }
@@ -158,9 +158,9 @@ template <typename KEY, typename VALUE>
 void HashTable<KEY,VALUE>::resize()
 {
 
-    int new_size = ((len+1)*FACTOR)-1;
-    if(isTooLittleElem()){
-        new_size = ((len+1)/FACTOR)-1;
+    int new_size = ((len+1) * Hash_Factor) - 1;
+    if(checkIfNotEnoughElements()){
+        new_size = ((len+1) / Hash_Factor) - 1;
         assert(new_size>0);
     }
     DList<VALUE>* temp_data = new DList<VALUE>[new_size];
@@ -169,7 +169,7 @@ void HashTable<KEY,VALUE>::resize()
         auto data_iter = data[i].begin();
         auto key_iter = key_data[i].begin();
         for(; data_iter != data[i].end() && key_iter != key_data[i].end(); ++data_iter, ++key_iter){
-            int hash = hashCalculate(hashFunc(key_iter.getData()), new_size);
+            int hash = calculateHashFunc(hashFunc(key_iter.getData()), new_size);
             temp_data[hash].insertFirst(data_iter.getData());
             temp_key_arr[hash].insertFirst(key_iter.getData());
         }
@@ -184,7 +184,7 @@ void HashTable<KEY,VALUE>::resize()
 template <typename KEY, typename VALUE>
 void HashTable<KEY,VALUE>::remove(const KEY& key)
 {
-    int hash = hashCalculate(hashFunc(key), len);
+    int hash = calculateHashFunc(hashFunc(key), len);
     auto iter_value = data[hash].begin();
     auto iter_key = key_data[hash].begin();
     for( ;iter_key != key_data[hash].end(); ++iter_key, ++iter_value){
@@ -193,7 +193,7 @@ void HashTable<KEY,VALUE>::remove(const KEY& key)
             key_data[hash].deleteNode(*iter_key);
             data[hash].deleteNode(*iter_value);
             elem_num--;
-            if(isTooLittleElem() && len>(FACTOR*FACTOR-1)) // len check so to not get less then base length.
+            if(checkIfNotEnoughElements() && len > (Hash_Factor * Hash_Factor - 1)) // len check so to not get less then base length.
             {
                 resize();
             }
