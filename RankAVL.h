@@ -12,7 +12,7 @@
 
 
 /**
- * Implementation of an AVL tree data structure.
+ * Implementation of an AVL tree node_data structure.
  * this tree won't allow duplicated keys.
  * the tree iterator run through the items without using the stack (O(1) in memory)
  * assuming T type has: comparison operator (<, ==) ,
@@ -24,7 +24,7 @@
  */
 
 /**
- * a class to inherit from to make changes to the data in the tree
+ * a class to inherit from to make changes to the node_data in the tree
  * @tparam S
  */
 template<typename T>

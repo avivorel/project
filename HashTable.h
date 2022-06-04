@@ -7,7 +7,7 @@
 
 /***
  * description:
- * a hash table data-structure, using chain-addressing, while the size varies.
+ * a hash table node_data-structure, using chain-addressing, while the size varies.
  * size of table : 2^k-1
  * keeping load_factor = n/m <= 2
  * hash function based on constant GOLDEN_RATIO = (sqrt(5) -1)/2
@@ -118,11 +118,11 @@ const VALUE& HashTable<KEY,VALUE>::operator[] (const KEY& key) const
 {
     int hash = calculateHashFunc(hashFunc(key), len);
     assert(hash<len && hash>=0);
-    auto iter_value = data[hash].constBegin();
-    auto iter_key = key_data[hash].constBegin();
-    for( ;iter_value != data[hash].constEnd() && iter_key != key_data[hash].constEnd(); ++iter_key, ++iter_value){
-        if(iter_key.getData() == key){
-            return iter_value.getData();
+    auto iter_value = data[hash].constantIteratorBegin();
+    auto iter_key = key_data[hash].constantIteratorBegin();
+    for( ;iter_value != data[hash].constantIteratorEnd() && iter_key != key_data[hash].constantIteratorEnd(); ++iter_key, ++iter_value){
+        if(iter_key.getNodeData() == key){
+            return iter_value.getNodeData();
         }
     }
     throw keyNotFound();
@@ -140,8 +140,8 @@ void HashTable<KEY,VALUE>::insert(const KEY& key, const VALUE& value)
     //search if key exists
     int hash = calculateHashFunc(hashFunc(key), len);
     assert(hash<len && hash>=0);
-    for(auto iter_key = key_data[hash].constBegin(); iter_key != key_data[hash].constEnd(); ++iter_key){
-        if(iter_key.getData() == key){
+    for(auto iter_key = key_data[hash].constantIteratorBegin(); iter_key != key_data[hash].constantIteratorEnd(); ++iter_key){
+        if(iter_key.getNodeData() == key){
             throw HashTable<KEY,VALUE>::keyAlreadyExists();
         }
     }
@@ -169,9 +169,9 @@ void HashTable<KEY,VALUE>::resize()
         auto data_iter = data[i].begin();
         auto key_iter = key_data[i].begin();
         for(; data_iter != data[i].end() && key_iter != key_data[i].end(); ++data_iter, ++key_iter){
-            int hash = calculateHashFunc(hashFunc(key_iter.getData()), new_size);
-            temp_data[hash].insertFirst(data_iter.getData());
-            temp_key_arr[hash].insertFirst(key_iter.getData());
+            int hash = calculateHashFunc(hashFunc(key_iter.getNodeData()), new_size);
+            temp_data[hash].insertFirst(data_iter.getNodeData());
+            temp_key_arr[hash].insertFirst(key_iter.getNodeData());
         }
     }
     delete[] data;
@@ -189,7 +189,7 @@ void HashTable<KEY,VALUE>::remove(const KEY& key)
     auto iter_key = key_data[hash].begin();
     for( ;iter_key != key_data[hash].end(); ++iter_key, ++iter_value){
         assert(iter_value != data[hash].end());
-        if(iter_key.getData() == key){
+        if(iter_key.getNodeData() == key){
             key_data[hash].deleteNode(*iter_key);
             data[hash].deleteNode(*iter_value);
             elem_num--;

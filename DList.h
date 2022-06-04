@@ -6,16 +6,6 @@
 #define PROJECT_DLIST_H
 
 
-
-/**
- * Data Structure that implement a dual linked list.
- *  the data type, T, need to have:
- *  default c'tor, operator=, copy c'tor
- */
-/**
-* base Node in the list. so user can access a node in O(1) time.
-* @tparam T
-*/
 template<class T>
 class DList;
 
@@ -23,17 +13,17 @@ template<class T>
 class Node {
     friend DList<T>;
     Node *next;
-    Node *prev;
+    Node *previous;
     void deleteNode()
     {
-        this->prev->next = this->next;
+        this->previous->next = this->next;
         if (this->next != nullptr) {
-            this->next->prev = this->prev;
+            this->next->previous = this->previous;
         }
         delete this;
     }
 public:
-    T data;
+    T node_data;
 };
 
 template<class T>
@@ -44,10 +34,10 @@ class DList {
 public:
     DList() : head(new(Node<T>)) {
         head->next = nullptr;
-        head->prev = nullptr;
+        head->previous = nullptr;
     }
 
-    DList(const DList& src) = delete;
+    DList(const DList& to_copy) = delete;
 
     ~DList() {
         while (head->next != nullptr) {
@@ -64,9 +54,9 @@ public:
         }
         Node<T>* new_lists_head  = new Node<T>;
         new_lists_head->next = nullptr;
-        new_lists_head->prev = nullptr;
+        new_lists_head->previous = nullptr;
         const Node<T>* curr = list_to_copy.head->next;
-        Node<T>* prev = new_lists_head;
+        Node<T>* last_one = new_lists_head; // was prev
         while(curr != nullptr) {
             Node<T> *next = new (std::nothrow) Node<T>;
             if(next == nullptr){
@@ -76,12 +66,12 @@ public:
                 delete new_lists_head;
                 throw std::bad_alloc();
             }
-            next->data = curr->data;
+            next->node_data = curr->node_data;
             next->next = nullptr;
-            next->prev = prev;
-            prev->next = next;
+            next->previous = last_one;
+            last_one->next = next;
             curr = curr->next;
-            prev = next;
+            last_one = next;
         }
         while(this->head->next != nullptr) {
             deleteNode(this->head->next);
@@ -94,11 +84,11 @@ public:
     Node<T>* insertFirst(const T& to_insert_first)
     {
         Node<T>* new_node = new (Node<T>);
-        new_node->data = to_insert_first;
+        new_node->node_data = to_insert_first;
         new_node->next = head->next;
-        new_node->prev = head;
+        new_node->previous = head;
         if(head->next != nullptr){
-            head->next->prev = new_node;
+            head->next->previous = new_node;
         }
         head->next = new_node;
         return new_node;
@@ -113,15 +103,15 @@ public:
     }
 
     /*
-     * iterator made to iterate through the data in the list.
+     * iterator made to iterate through the node_data in the list.
      */
     class iterator{
         Node<T>* current;
         friend DList;
         explicit iterator(Node<T>* init) : current(init) {}
     public:
-        T& getData() const{
-            return current->data;
+        T& getNodeData() const{
+            return current->node_data;
         }
 
         Node<T>* operator* ()
@@ -135,9 +125,9 @@ public:
         }
         iterator operator++ (int)
         {
-            iterator tmp = *this;
+            iterator temp = *this;
             current = current->next;
-            return tmp;
+            return temp;
         }
 
         bool operator == (const iterator& iter) const
@@ -160,49 +150,49 @@ public:
         return iterator(nullptr);
     }
 
-    class ConstIterator{
-        const Node<T>* current;
+    class constIter{
+        const Node<T>* curr;
         friend DList;
-        explicit ConstIterator(const Node<T>* init) : current(init) {}
+        explicit constIter(const Node<T>* init) : curr(init) {}
     public:
-        const T& getData() const{
-            return current->data;
+        const T& getNodeData() const{
+            return curr->node_data;
         }
 
         const Node<T>* operator* () const
         {
-            return current;
+            return curr;
         }
-        ConstIterator& operator ++ ()
+        constIter& operator ++ ()
         {
-            current = current->next;
+            curr = curr->next;
             return *this;
         }
-        ConstIterator operator++ (int)
+        constIter operator++ (int)
         {
-            ConstIterator tmp = *this;
-            current = current->next;
+            constIter tmp = *this;
+            curr = curr->next;
             return tmp;
         }
 
-        bool operator == (const ConstIterator& iter) const
+        bool operator == (const constIter& iter) const
         {
-            return (iter.current == current);
+            return (iter.curr == curr);
         }
-        bool operator != (const ConstIterator& iter) const
+        bool operator != (const constIter& iter) const
         {
             return !(iter == *this);
         }
 
     };
 
-    ConstIterator constBegin() const
+    constIter constantIteratorBegin() const
     {
-        return ConstIterator(head->next);
+        return constIter(head->next);
     }
-    ConstIterator constEnd() const
+    constIter constantIteratorEnd() const
     {
-        return ConstIterator(nullptr);
+        return constIter(nullptr);
     }
 
 };
